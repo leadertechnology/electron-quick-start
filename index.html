@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+  <link href="./styles.css" rel="stylesheet">
+  <title>Hello World!</title>
+
+</head>
+
+<body>
+  <form>
+    <button type="button" id="setMobileButton" class="btn btn-secondary">button</button>
+  </form>
+
+  <webview id="ebuy" src="https://m.ebuy.mo/zh-MO/auth/member/forget-password-mobile" preload="./preload_ebuy.js"
+    style="width:480px; height:100vh"></webview>
+
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://localhost:3000');
+    socket.on('connect', function(){
+      console.log("io connected");
+    });
+    socket.on('enterCode', function(data){
+      console.log("io enterCode", data);
+      enterCode(data)
+    });
+    socket.on('disconnect', function(){
+      console.log("io disconnect");
+    });
+  </script> 
+</body>
+
 </html>
