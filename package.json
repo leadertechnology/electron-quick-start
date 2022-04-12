@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "taobaoGuy_ebuyPW",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/leadertechnology/taobaoGuy_ebuyPW.git",
   "keywords": [
     "Electron",
     "quick",
@@ -17,7 +17,6 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-<<<<<<< HEAD
     "electron": "^17.1.2"
   },
   "dependencies": {
@@ -26,9 +25,6 @@
     "express": "^4.17.3",
     "http": "0.0.1-security",
     "jquery": "^3.6.0",
-    "socket.io": "^4.4.1"
-=======
+    "socket.io": "^4.4.1",
     "electron": "^18.0.2"
->>>>>>> c670b8168b81cc24afc4ada7f4fdc234c168e0a2
-  }
 }
